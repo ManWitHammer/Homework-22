@@ -61,7 +61,8 @@ const independent = async(e) => {
 		const user = {
 			name: data.get('name'),
 			age: data.get('age'),
-			country: data.get('country')
+			country: data.get('country'),
+			id: data.get('name').trim()
 		}
 		form.reset()
 		const res = await postData('http://localhost:3000/data', user)

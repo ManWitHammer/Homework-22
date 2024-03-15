@@ -13,10 +13,12 @@ const randomU = () => {
         'Канада','Австралия','Бразилия','Индонезия','Пакистан',
         'Нигерия','Бангладеш','Мексика','Филиппины','Вьетнам'
     ]
+    const name = arr[Math.floor(Math.random() * arr.length)]
     return {
-        name: arr[Math.floor(Math.random() * arr.length)],
+        name: name,
         age: Math.floor(Math.random()*(max-min)+min),
-        country: countries[Math.floor(Math.random() * countries.length)]
+        country: countries[Math.floor(Math.random() * countries.length)],
+        id: name.trim()
     }
 }
 

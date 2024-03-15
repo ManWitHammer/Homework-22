@@ -47,9 +47,16 @@ app.post('/data', (req, res) => {
 	const data = JSON.parse(fs.readFileSync('data/data.json'))
     data.unshift(req.body)
     fs.writeFileSync('data/data.json', JSON.stringify(data))
-	console.log(req.body)
 	res.json(req.body)
 })
+app.patch('/data/:id', (req, res) => {
+    const newData = req.body
+	const data = JSON.parse(fs.readFileSync('data/data.json'))
+	const id = req.params.id
+	const index = data.findIndex(el => el.id === id)
+	data[index] = newData
+	fs.writeFileSync('data/data.json', JSON.stringify(data))
+});
 app.use((req, res) => {
     res.status(404).sendFile(createPath('pages', 'error', 'html'))
 })
