@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', async(e) => {
             const newName = prompt('Введите новое имя', el.querySelector('.pipi1').innerText.slice(5))
             const newAge = +prompt('Введите новый возраст', el.querySelector('.pipi2').innerText.slice(9))
             const newCountry = prompt('Введите новую страну', el.querySelector('.pipi3').innerText.slice(8))
+            el.querySelector('.pipi1').innerText = `Имя: ${newName}`
+            el.querySelector('.pipi2').innerText = `Возраст: ${newAge}`
+            el.querySelector('.pipi3').innerText = `Страна: ${newCountry}`
             const newProduct = {
                 name: newName,
                 age: newAge,

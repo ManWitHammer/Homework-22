@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 app.get('/main', (req, res) => {
     res.redirect('/')
 })
-app.get('/main', (req, res) => {
+app.get('/home', (req, res) => {
     res.redirect('/')
 })
 app.get('/data', (req, res) => {

@@ -21,8 +21,21 @@ body {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-
 }
+
+body::-webkit-scrollbar {
+	width: 15px; /* Ширина всего элемента навигации */
+  }
+  
+  body::-webkit-scrollbar-track {
+	background: #fff; /* Цвет дорожки */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+	background-color: #050c26; /* Цвет бегунка */
+	border-radius: 20px; /* Округление бегунка */
+	border: 3px solid #050c26; /* Оформление границ бегунка */
+  }
 
 .fixedBl {
 	position: fixed;
@@ -109,6 +122,20 @@ button {
 	backdrop-filter: blur(100px);
 	overflow-y: auto;
 }
+
+.container::-webkit-scrollbar {
+	width: 15px; /* Ширина всего элемента навигации */
+  }
+  
+  .container::-webkit-scrollbar-track {
+	background: none; /* Цвет дорожки */
+  }
+  
+  .container::-webkit-scrollbar-thumb {
+	background-color: #ffffff; /* Цвет бегунка */
+	border-radius: 20px; /* Округление бегунка */
+	border: 3px solid #050c26; /* Оформление границ бегунка */
+  }
 
 .product {
 	border-top: 4px solid white;
