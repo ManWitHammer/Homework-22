@@ -1,14 +1,1 @@
-[
-	{
-		"name": "test1",
-		"age": 55
-	},
-	{
-		"name": "test2",
-		"age": 22
-	},
-	{
-		"name": "test3",
-		"age": 121
-	}
-]
+[{"name":"Денис","age":65,"country":"Индия"},{"name":"Владимир","age":72,"country":"Филиппины"},{"name":"Иван","age":70,"country":"Франция"},{"name":"Матвей сигма","age":"12312","country":"Киргизстан"},{"name":"Никита","age":55,"country":"china"},{"name":"Я","age":22,"country":"USA"},{"name":"test3","age":121,"country":"UK"}]

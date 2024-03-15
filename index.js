@@ -28,9 +28,14 @@ app.get('/page1', (req, res) => {
 app.get('/page2', (req, res) => {
 	res.sendFile(createPath('pages', 'page2', 'html'))
 })
-app.post('/page1', (req, res) => {
-	console.log(req.body)
-	res.send({ message: req.body })
+app.get('/', (req, res) => {
+	res.sendFile(createPath('pages', 'index', 'html'))
+})
+app.get('/main', (req, res) => {
+    res.redirect('/')
+})
+app.get('/main', (req, res) => {
+    res.redirect('/')
 })
 app.get('/data', (req, res) => {
 	const dataFromFile = JSON.parse(
@@ -38,7 +43,16 @@ app.get('/data', (req, res) => {
 	)
 	res.send(dataFromFile)
 })
-
+app.post('/data', (req, res) => {
+	const data = JSON.parse(fs.readFileSync('data/data.json'))
+    data.unshift(req.body)
+    fs.writeFileSync('data/data.json', JSON.stringify(data))
+	console.log(req.body)
+	res.json(req.body)
+})
+app.use((req, res) => {
+    res.status(404).sendFile(createPath('pages', 'error', 'html'))
+})
 // server listening
 app.listen(PORT, error => {
 	error ? console.log(error) : console.log(`listening port ${PORT}`)
